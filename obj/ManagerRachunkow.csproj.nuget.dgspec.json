@@ -49,6 +49,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.0, )"
@@ -67,9 +75,13 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
+            "Microsoft.OpenApi": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[1.3.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
