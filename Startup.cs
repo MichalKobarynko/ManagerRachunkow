@@ -16,6 +16,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using ManagerRachunkow.Interfaces;
+using ManagerRachunkow.Interfaces.Implementations;
 //using Microsoft.EntityFrameworkCore;
 
 
@@ -50,13 +53,18 @@ namespace ManagerRachunkow
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IBillService, BillService>();
+            services.AddTransient<IInformationService, InformationService>();
+            services.AddLogging();
+
             services.AddMvc();
 
             services.AddSwaggerGen(swagger =>
             {
                 swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "My API" });
             });
-
+            services.AddAutoMapper();
             services.AddControllers();
         }
 

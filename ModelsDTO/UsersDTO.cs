@@ -7,5 +7,10 @@ namespace ManagerRachunkow.ModelsDTO
 {
     public class UsersDTO
     {
+        public IList<UserDTO> userList { get; set; }
+        public UsersDTO()
+        {
+            userList = new List<UserDTO>();
+        }
     }
 }

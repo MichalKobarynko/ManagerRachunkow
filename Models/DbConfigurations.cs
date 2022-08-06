@@ -15,7 +15,7 @@ namespace ManagerRachunkow.Models
             entity.Property(e => e.UserName).IsRequired();
             entity.Property(e => e.Email).IsRequired();
             entity.Property(e => e.PasswordHash).IsRequired();
-            entity.Property(e => e.isPaid).IsRequired();
+            entity.Property(e => e.IsPaid).IsRequired();
         }
     }
 

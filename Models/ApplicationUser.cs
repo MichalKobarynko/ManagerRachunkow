@@ -8,7 +8,7 @@ namespace ManagerRachunkow.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public bool isPaid { get; set; }
+        public bool IsPaid { get; set; }
         public IEnumerable<Bill> Bills { get; set; }
         public IEnumerable<Information> Informations { get; set; }
     }
