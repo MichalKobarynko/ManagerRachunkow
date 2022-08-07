@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ManagerRachunkow.Interfaces
 {
-    public interface IBillService
+    public interface IBillsService
     {
         ResponseDTO AddBill(BillDTO billDTO);
         ResponseDTO EditBill(BillDTO billDTO);

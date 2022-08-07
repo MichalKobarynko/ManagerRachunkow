@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
@@ -53,16 +54,17 @@ namespace ManagerRachunkow
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IBillService, BillService>();
-            services.AddTransient<IInformationService, InformationService>();
             services.AddLogging();
+            services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IBillsService, BillsService>();
+            services.AddTransient<IInformationsService, InformationsService>();
+            
 
             services.AddMvc();
 
             services.AddSwaggerGen(swagger =>
             {
-                swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "My API" });
+                swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "Manager rachunków" });
             });
             services.AddAutoMapper();
             services.AddControllers();
@@ -77,9 +79,7 @@ namespace ManagerRachunkow
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 

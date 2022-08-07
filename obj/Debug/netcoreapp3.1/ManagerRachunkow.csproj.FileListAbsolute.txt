@@ -46,3 +46,5 @@ C:\Users\Dom\Desktop\Aplikacje_Angular\Managerrachunkow\MenagerRachunkow\Manager
 C:\Users\Dom\Desktop\Aplikacje_Angular\Managerrachunkow\MenagerRachunkow\ManagerRachunkow\ManagerRachunkow\obj\Debug\netcoreapp3.1\ManagerRachunkow.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Dom\Desktop\Aplikacje_Angular\Managerrachunkow\MenagerRachunkow\ManagerRachunkow\ManagerRachunkow\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\Dom\Desktop\Aplikacje_Angular\Managerrachunkow\MenagerRachunkow\ManagerRachunkow\ManagerRachunkow\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dom\Desktop\Aplikacje_Angular\Managerrachunkow\MenagerRachunkow\ManagerRachunkow\ManagerRachunkow\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Dom\Desktop\Aplikacje_Angular\Managerrachunkow\MenagerRachunkow\ManagerRachunkow\ManagerRachunkow\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

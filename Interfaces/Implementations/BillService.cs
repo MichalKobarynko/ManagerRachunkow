@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace ManagerRachunkow.Interfaces.Implementations
 {
-    public class BillService : IBillService
+    public class BillsService : IBillsService
     {
         private readonly ApplicationDbContext context;
         private readonly ILogger logger;
         private readonly IMapper mapper;
 
-        public BillService(
+        public BillsService(
             ApplicationDbContext context,
-            ILogger logger,
+            ILogger<BillsService> logger,
             IMapper mapper)
         {
             this.context = context;

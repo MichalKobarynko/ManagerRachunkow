@@ -10,13 +10,13 @@ using ManagerRachunkow.Extensions;
 
 namespace ManagerRachunkow.Interfaces.Implementations
 {
-    public class UserService : IUserService
+    public class UsersService : IUsersService
     {
         private readonly ApplicationDbContext context;
         private readonly ILogger logger;
         private readonly IMapper mapper;
 
-        public UserService(ApplicationDbContext context, ILogger logger, IMapper mapper)
+        public UsersService(ApplicationDbContext context, ILogger<UsersService> logger, IMapper mapper)
         {
             this.context = context;
             this.logger = logger;

@@ -7,10 +7,6 @@ namespace ManagerRachunkow.ModelsDTO
 {
     public class BillsDTO
     {
-        public List<BillDTO> billList { get; set; }
-        public BillsDTO()
-        {
-            billList = new List<BillDTO>();
-        }
+        public IList<BillDTO> billList { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ManagerRachunkow.Interfaces
 {
-    public interface IUserService
+    public interface IUsersService
     {
         UsersDTO GetAllUsers(); 
         ResponseDTO EditUser(UserDTO userDTO);

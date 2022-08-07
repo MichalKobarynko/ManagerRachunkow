@@ -31,6 +31,8 @@
     ".NETCoreApp,Version=v3.1": {
       "ManagerRachunkow/1.0.0": {
         "dependencies": {
+          "AutoMapper": "8.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.0",
           "Microsoft.EntityFrameworkCore": "3.1.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.0",
@@ -325,6 +327,36 @@
         },
         "compile": {
           "ManagerRachunkow.dll": {}
+        }
+      },
+      "AutoMapper/8.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/6.0.0": {
+        "dependencies": {
+          "AutoMapper": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.0": {},
@@ -2909,6 +2941,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "path": "automapper/8.0.0",
+      "hashPath": "automapper.8.0.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-njWYKGM3FokOlo9nj8kVLYyvJrGbLItmNA2A00lDXJnxybfP7TuZEYjQRt8ne+Cp0OF4W0ZzgdgxMioHfDEpdA==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/6.0.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.0": {
       "type": "package",

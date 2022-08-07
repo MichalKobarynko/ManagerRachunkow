@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ManagerRachunkow.Interfaces
 {
-    public interface IInformationService
+    public interface IInformationsService
     {
         ResponseDTO AddInformation(InformationDTO infoDTO);
         ResponseDTO EditInformation(InformationDTO infoDTO);

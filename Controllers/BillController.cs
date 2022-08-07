@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ManagerRachunkow.Extensions;
+using ManagerRachunkow.Interfaces;
+using ManagerRachunkow.ModelsDTO;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,79 +14,50 @@ namespace ManagerRachunkow.Controllers
 {
     public class BillController : Controller
     {
-        // GET: BillController
-        public ActionResult Index()
+        private readonly IBillsService billService;
+        private readonly ILogger<BillController> logger;
+
+        public BillController(
+            IBillsService billService,
+            ILogger<BillController> logger
+            )
         {
-            return View();
+            this.billService = billService;
+            this.logger = logger;
         }
 
-        // GET: BillController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: BillController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: BillController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [Route("/api/bill/add")]
+        public IActionResult AddBill([FromBody]BillDTO billDTO)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            logger.LogInformation($"{Strings.WykonanieMetodyKontrolera} {nameof(BillController)}: AddBill");
+            return Ok(billService.AddBill(billDTO));
         }
 
-        // GET: BillController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpPut]
+        [Route("/api/bill/edit")]
+        public IActionResult EditBill([FromBody]BillDTO billDTO)
         {
-            return View();
+            logger.LogInformation($"{Strings.WykonanieMetodyKontrolera} {nameof(BillController)}: EditBill");
+            return Ok(billService.EditBill(billDTO));
         }
 
-        // POST: BillController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [AllowAnonymous]
+        [HttpDelete]
+        [Route("/api/bill/delete/{mail}")]
+        public IActionResult DeleteBill(string mail)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            logger.LogInformation($"{Strings.WykonanieMetodyKontrolera} {nameof(BillController): DeleteBill}");
+            return Ok(billService.DeleteBill(mail));
         }
 
-        // GET: BillController/Delete/5
-        public ActionResult Delete(int id)
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("/api/bill.getAll/{mail}")]
+        public IActionResult GetBillByUser(string email)
         {
-            return View();
-        }
-
-        // POST: BillController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            logger.LogInformation($"{Strings.WykonanieMetodyKontrolera} {nameof(BillController)}: GetAll");
+            return Ok(billService.GetAllBillByUser(email));
         }
     }
 }

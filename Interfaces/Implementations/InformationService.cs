@@ -10,15 +10,15 @@ using ManagerRachunkow.Extensions;
 
 namespace ManagerRachunkow.Interfaces.Implementations
 {
-    public class InformationService : IInformationService
+    public class InformationsService : IInformationsService
     {
         private readonly ApplicationDbContext context;
         private readonly ILogger logger;
         private readonly IMapper mapper;
 
-        public InformationService(
+        public InformationsService(
             ApplicationDbContext context, 
-            ILogger logger, 
+            ILogger<InformationsService> logger, 
             IMapper mapper
             )
         {
